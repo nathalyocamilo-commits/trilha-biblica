@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trilha Bíblica</title>
+<meta name="theme-color" content="#c8553d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Trilha">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#fbf3ea;--card:#fff9f2;--tx:#3d2433;--mu:#8a7080;--ac:#c8553d;--acD:#9c3b27;--rose:#f6d5d1;--sage2:#4f7a5a;--sageD:#36573f;--sun:#f0b84a;--sunD:#c48f1d;--ln:#ecd9cc;--lnD:#cdbba7;--sunT:#f0b84a33;--sageT:#4f7a5a22;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#231820;--card:#2e2029;--tx:#f7e9e1;--mu:#b39aa6;--ac:#ee8a6e;--acD:#b9573e;--rose:#4a2d3a;--sage2:#6fae7c;--sageD:#497a54;--ln:#43303c;--lnD:#2a1c25}}
+:root[data-theme="dark"]{--bg:#231820;--card:#2e2029;--tx:#f7e9e1;--mu:#b39aa6;--ac:#ee8a6e;--acD:#b9573e;--rose:#4a2d3a;--sage2:#6fae7c;--sageD:#497a54;--ln:#43303c;--lnD:#2a1c25}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 'DM Sans',system-ui,sans-serif;padding-bottom:92px}
+main{max-width:520px;margin:0 auto;padding:0 16px 20px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);display:flex;align-items:center;gap:6px;padding:10px 2px;border-bottom:2px solid var(--ln);margin-bottom:14px}
+.top .st{display:flex;align-items:center;gap:4px;font:800 18px 'DM Sans';margin-right:auto}
+.top .st svg{width:28px;height:28px}
+.top .xp{font:800 16px 'DM Sans';background:var(--sunT);color:var(--sunD);border-radius:14px;padding:5px 11px}
+.top .lv{font:800 13px 'DM Sans';background:var(--ln);border-radius:14px;padding:6px 10px}
+.top button{background:none;border:0;font-size:18px;cursor:pointer;padding:2px 4px;color:var(--mu)}
+.week{display:flex;justify-content:space-between;background:var(--card);border:2px solid var(--ln);border-radius:20px;padding:10px 12px;margin-bottom:14px}
+.week div{text-align:center;font:800 11px 'DM Sans';color:var(--mu)}
+.week i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;margin-top:4px;background:var(--ln);font-style:normal;font-size:16px;color:#fff}
+.week .on i{background:var(--sun);color:#3d2433}
+.week .td i{outline:3px solid var(--ac);outline-offset:1px}
+.say{display:flex;gap:10px;align-items:center;background:var(--card);border:2px solid var(--ln);border-radius:20px;padding:10px 14px;margin-bottom:6px}
+.say svg{width:58px;flex:none}
+.say p{margin:0;font-weight:500;font-size:15px}
+select{display:block;width:100%;font:16px 'DM Sans',sans-serif;padding:14px;border:2px solid var(--ln);border-radius:16px;background:var(--card);color:var(--tx);margin-bottom:10px}
+.row{display:flex;gap:4px;align-items:flex-end;flex-wrap:wrap;padding:0 4px}
+.plank{height:12px;background:#b58559;border-radius:3px;box-shadow:0 4px 0 #8a6340;margin-bottom:6px}
+.bk{position:relative;width:27px;border-radius:5px 5px 2px 2px;border:2px solid var(--lnD);background:var(--ln);cursor:pointer;overflow:hidden;flex:none}
+.bk:before,.bk:after{content:"";position:absolute;left:2px;right:2px;height:2px;background:#ffffff80;z-index:1}
+.bk:before{top:6px}.bk:after{bottom:6px}
+.bk i{position:absolute;left:0;right:0;bottom:0;background:var(--c);opacity:.85}
+.bk.r{background:var(--c);border-color:#0003}
+.bk span{position:absolute;left:50%;top:15px;transform:translateX(-50%);writing-mode:vertical-rl;font:700 10.5px 'DM Sans',sans-serif;color:var(--mu);white-space:nowrap;z-index:2}
+.bk.r span{color:#fff}.bk.p span{color:var(--tx)}
+.bk.o{outline:3px solid var(--tx);outline-offset:1px}
+.lg{display:flex;gap:14px;font:700 12px 'DM Sans';color:var(--mu);margin-bottom:6px}
+.lg span{display:flex;align-items:center;gap:5px}.lg i{width:12px;height:16px;border-radius:3px;border:2px solid var(--lnD);background:var(--ln)}
+.lg i.lr{background:var(--ac);border-color:#0003}.lg i.lp{background:linear-gradient(0deg,var(--ac) 50%,var(--ln) 50%)}
+.tt{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 10px;margin-top:8px}.tt button{flex:none;border:2px solid var(--ln);background:var(--card);border-radius:16px;padding:8px 14px;text-align:left;cursor:pointer;color:var(--mu);max-width:210px}.tt button.on{border-color:var(--sun);background:var(--sunT)}.tt b{display:block;font:800 14px "DM Sans";color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tt small{font:700 11px "DM Sans"}.tt .nt{border-style:dashed;align-self:center}.tt .nt b{color:var(--ac)}
+.yr{display:flex;gap:8px;margin:10px 0 4px}.yr button{flex:1;border:2px solid var(--ln);background:var(--card);border-radius:16px;padding:9px 12px;text-align:left;cursor:pointer;color:var(--mu)}.yr button.on{border-color:var(--sun);background:var(--sunT)}.yr b{display:block;font:800 18px "DM Sans";color:var(--tx)}.yr small{font:700 11px "DM Sans"}
+.node.lk{opacity:.55}
+.plan{background:var(--card);border:2px solid var(--ln);border-radius:18px;padding:12px 14px;margin:8px 0 4px;font-size:14px}.plan p{margin:8px 0 0;color:var(--mu);font-weight:500}
+.name{background:var(--sunT);border-radius:20px;padding:14px;margin-bottom:12px}
+.sec{font:800 12px 'DM Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin:22px 0 -8px;text-align:center}
+.unit{border-radius:18px;padding:14px 16px;color:#fff;display:flex;justify-content:space-between;align-items:center;box-shadow:0 5px 0 #0004;cursor:pointer;margin:20px 0 22px}
+.unit b{font:600 22px Fraunces,Georgia,serif;display:block;line-height:1.15}
+.unit small{opacity:.92;font-weight:700;font-size:13px}
+.unit span{font:800 22px 'DM Sans'}
+.nw{display:flex;justify-content:center;margin-bottom:16px;position:relative}
+.node{width:68px;height:68px;border-radius:50%;border:0;font:800 21px Fraunces,Georgia,serif;background:var(--ln);color:var(--mu);box-shadow:0 6px 0 var(--lnD);cursor:pointer}
+.node:active{transform:translateY(5px);box-shadow:0 1px 0 var(--lnD)}
+.node.d{background:var(--sun);color:#3d2433;box-shadow:0 6px 0 var(--sunD)}
+.node.c{background:var(--ac);color:#fff;box-shadow:0 6px 0 var(--acD);animation:pls 1.6s infinite}
+@keyframes pls{50%{transform:scale(1.07)}}
+.go{position:absolute;top:-36px;background:var(--card);border:2px solid var(--ln);border-radius:12px;padding:3px 10px;font:800 13px 'DM Sans';color:var(--ac);animation:bob .9s infinite alternate}
+.go:after{content:"";position:absolute;left:50%;bottom:-7px;width:10px;height:10px;background:var(--card);border-right:2px solid var(--ln);border-bottom:2px solid var(--ln);transform:translateX(-50%) rotate(45deg)}
+@keyframes bob{to{transform:translateY(-5px)}}
+.btn{display:block;width:100%;font:800 15px 'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:15px;border:0;border-radius:16px;background:var(--ac);color:#fff;box-shadow:0 5px 0 var(--acD);cursor:pointer}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--acD)}
+.btn.g{background:var(--sage2);box-shadow:0 5px 0 var(--sageD)}
+.btn.g:active{box-shadow:0 1px 0 var(--sageD)}
+.btn.gh{background:none;color:var(--mu);box-shadow:none;border:2px solid var(--ln)}
+.btn.gh:active{transform:none;background:var(--ln)}
+h2.pg{font:600 30px Fraunces,Georgia,serif;margin:8px 0 12px}
+.card{background:var(--card);border:2px solid var(--ln);border-radius:20px;padding:16px;margin-bottom:12px}
+.q{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.q:last-child{margin:0}
+.q i{width:44px;height:44px;border-radius:50%;background:var(--ln);display:grid;place-items:center;font-style:normal;font-size:20px;flex:none}
+.q.ok i{background:var(--sage2);color:#fff}
+.q div{flex:1}
+.q b{display:block;font-size:15px}
+.pbar{height:12px;background:var(--ln);border-radius:8px;overflow:hidden;margin-top:6px}
+.pbar i{display:block;height:100%;background:var(--sun);border-radius:8px;transition:width .5s}
+.q.ok .pbar i{background:var(--sage2)}
+.mk{display:flex;gap:14px;align-items:center;padding:12px 14px;border-radius:18px;background:var(--card);border:2px solid var(--ln);margin-bottom:10px;opacity:.5}
+.mk.on{opacity:1;border-color:var(--sun);background:var(--sunT)}
+.mk i{flex:none;width:42px;height:42px;border-radius:50%;background:var(--ln);display:grid;place-items:center;font-style:normal;font-size:20px;color:var(--mu)}
+.mk.on i{background:var(--sun);color:#3d2433}
+.mk b{font:600 18px Fraunces,Georgia,serif;display:block}
+.mk small{color:var(--mu);font-size:13px}
+.tabs{display:flex;gap:6px;margin-bottom:12px}
+.tabs button{flex:1;border:2px solid var(--ln);border-radius:16px;padding:9px 2px;font:800 12px 'DM Sans',sans-serif;background:none;color:var(--mu);cursor:pointer}
+.tabs button.on{background:var(--tx);border-color:var(--tx);color:var(--bg)}
+.item{border-radius:18px;padding:14px;margin-bottom:10px;display:flex;gap:6px;background:var(--card);border:2px solid var(--ln)}
+.item.words{border-left:8px solid var(--sage2)}.item.verses{border-left:8px solid var(--ac)}.item.chars{border-left:8px solid var(--sun)}.item.apps{border-left:8px solid #7a4a6a}
+.item>div{flex:1}
+.item q{font:italic 400 18px/1.4 Fraunces,Georgia,serif;quotes:"“" "”"}
+.item b{font:600 19px Fraunces,Georgia,serif}
+.item small{display:block;margin-top:6px;font-size:12px;color:var(--mu);font-weight:700}
+.tag{display:inline-block;background:#7a4a6a;color:#fff;border-radius:10px;padding:1px 9px;font-size:12px;font-weight:800;margin-bottom:4px}
+.x{background:none;border:0;color:var(--mu);font-size:22px;cursor:pointer;align-self:flex-start;padding:0 4px}
+.empty{color:var(--mu);font:italic 400 17px Fraunces,Georgia,serif;text-align:center;padding:26px 10px}
+input,textarea{display:block;width:100%;font:16px 'DM Sans',sans-serif;padding:14px 16px;border:2px solid var(--ln);border-radius:16px;background:var(--card);color:var(--tx);margin-bottom:10px;outline:0}
+input:focus,textarea:focus{border-color:var(--sage2)}
+textarea{min-height:96px;resize:none}
+::placeholder{color:var(--mu)}
+.areas{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.areas button{border:2px solid var(--ln);background:none;border-radius:16px;padding:7px 13px;font:700 13px 'DM Sans',sans-serif;color:var(--mu);cursor:pointer}
+.areas button.on{background:var(--sage2);border-color:var(--sage2);color:#fff}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:2px solid var(--ln);display:flex;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));z-index:30}
+nav button{flex:1;background:none;border:2px solid transparent;border-radius:16px;padding:6px 0 4px;font:800 11px 'DM Sans',sans-serif;color:var(--mu);cursor:pointer}
+nav button.on{background:var(--sunT);border-color:var(--sun);color:var(--sunD)}
+nav svg{display:block;margin:0 auto 2px;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ov{position:fixed;inset:0;background:var(--bg);z-index:80;display:flex;flex-direction:column;padding:calc(14px + env(safe-area-inset-top,0px)) 18px calc(14px + env(safe-area-inset-bottom,0px));max-width:520px;margin:0 auto}
+.ovtop{display:flex;gap:12px;align-items:center}
+.ovtop button{background:none;border:0;font-size:26px;color:var(--mu);cursor:pointer;padding:0}
+.pb{flex:1;height:16px;background:var(--ln);border-radius:10px;overflow:hidden}
+.pb i{display:block;height:100%;background:var(--sage2);border-radius:10px;transition:width .4s}
+.ovbody{flex:1;overflow:auto;padding:22px 0}
+.ovbody h2{font:600 28px/1.15 Fraunces,Georgia,serif;margin:8px 0 6px}
+.ovbody .ref{font:600 40px/1.1 Fraunces,Georgia,serif;color:var(--ac);margin:18px 0}
+.ovbody .sub{color:var(--mu);margin:0 0 16px}
+.ovbody .mas{width:96px}
+.ovft{display:flex;flex-direction:column;gap:10px}
+.fin{text-align:center}
+.fin .mas{width:140px;animation:hop .7s}
+.fl{transform-box:fill-box;transform-origin:50% 100%;animation:flick 1.6s ease-in-out infinite}
+@keyframes flick{50%{transform:scale(1.08,.92) rotate(2.5deg)}}
+.eyes{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes hop{30%{transform:translateY(-24px)}60%{transform:translateY(0)}80%{transform:translateY(-8px)}}
+.stats{display:flex;gap:10px;margin:18px 0}
+.stats div{flex:1;border:2px solid var(--ln);border-radius:16px;padding:10px 4px;background:var(--card)}
+.stats b{display:block;font:800 24px 'DM Sans'}
+.stats small{font:800 11px 'DM Sans';color:var(--mu);text-transform:uppercase}
+.stats div:first-child{border-color:var(--sun);background:var(--sunT)}
+.flash{border:2px solid var(--ln);background:var(--card);border-radius:22px;padding:22px 18px;text-align:center;min-height:170px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.flash .t{font:600 26px/1.25 Fraunces,Georgia,serif}
+.flash .a{padding-top:10px;border-top:2px dashed var(--ln);font:italic 400 19px/1.4 Fraunces,Georgia,serif}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 18px;border-radius:20px;font-weight:700;font-size:14px;z-index:95;animation:tout .4s 2s forwards;width:max-content;max-width:88vw;text-align:center}
+@keyframes tout{to{opacity:0}}
+.sp{position:fixed;width:14px;height:14px;z-index:90;pointer-events:none;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:rise 1.3s ease-out forwards}
+@keyframes rise{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.3);opacity:0}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav id="nav"></nav>
+<div id="ov"></div>
+<script>
+const B=[["Gênesis",50],["Êxodo",40],["Levítico",27],["Números",36],["Deuteronômio",34],["Josué",24],["Juízes",21],["Rute",4],["1Samuel",31],["2Samuel",24],["1Reis",22],["2Reis",25],["1Crônicas",29],["2Crônicas",36],["Esdras",10],["Neemias",13],["Ester",10],["Jó",42],["Salmos",150],["Provérbios",31],["Eclesiastes",12],["Cantares",8],["Isaías",66],["Jeremias",52],["Lamentações",5],["Ezequiel",48],["Daniel",12],["Oseias",14],["Joel",3],["Amós",9],["Obadias",1],["Jonas",4],["Miqueias",7],["Naum",3],["Habacuque",3],["Sofonias",3],["Ageu",2],["Zacarias",14],["Malaquias",4],["Mateus",28],["Marcos",16],["Lucas",24],["João",21],["Atos",28],["Romanos",16],["1Coríntios",16],["2Coríntios",13],["Gálatas",6],["Efésios",6],["Filipenses",4],["Colossenses",4],["1Tessalonicenses",5],["2Tessalonicenses",3],["1Timóteo",6],["2Timóteo",4],["Tito",3],["Filemom",1],["Hebreus",13],["Tiago",5],["1Pedro",5],["2Pedro",3],["1João",5],["2João",1],["3João",1],["Judas",1],["Apocalipse",22]];
+const UC=["#4f7a5a","#c8553d","#7a4a6a","#c98a2a","#3f7a8c","#a0485f","#6a7a3a","#b5653a"];
+const CH=[];B.forEach(([n,t],b)=>{for(let c=1;c<=t;c++)CH.push({b,c,ref:n+" "+c})});
+const TOT=CH.length;const BS=[];{let a=0;B.forEach(x=>{BS.push(a);a+=x[1]})}
+let S={done:{},words:[],verses:[],chars:[],apps:[],cel:{},name:"",prac:{},mute:false};
+try{const r=localStorage.getItem("lb27");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+if(S.xp===undefined)S.xp=Object.keys(S.done).length*10+(S.words.length+S.verses.length+S.chars.length+S.apps.length)*5;
+const save=()=>{try{localStorage.setItem("lb27",JSON.stringify(S))}catch(e){}};
+if(S.v!==3){const OLD=[["Gênesis",50],["Êxodo",40],["Levítico",27],["Números",36],["Deuteronômio",34],["Josué",24],["Juízes",21],["Rute",4],["1Samuel",31],["2Samuel",24],["1Reis",22],["2Reis",25],["1Crônicas",29],["2Crônicas",36],["Esdras",10],["Neemias",13],["Ester",10],["Oseias",14],["Joel",3],["Amós",9],["Obadias",1],["Jonas",4],["Miqueias",7],["Naum",3],["Habacuque",3],["Sofonias",3],["Ageu",2],["Zacarias",14],["Malaquias",4]],old=S.v>=2?OLD:OLD.slice(5),m=[];
+old.forEach(([n,t])=>{const nb=B.findIndex(x=>x[0]===n);for(let c=0;c<t;c++)m.push(BS[nb]+c)});
+const nd={};Object.keys(S.done).forEach(k=>{if(m[+k]!==undefined)nd[m[+k]]=S.done[k]});S.done=nd;
+const nc={};Object.keys(S.cel).forEach(k=>{if(k!=="all"&&old[+k])nc[B.findIndex(x=>x[0]===old[+k][0])]=S.cel[k]});S.cel=nc;
+if(S.base===undefined)S.base=S.v>=2?["Rute","Jó"].concat(["Mateus","Marcos","Lucas","João","Atos","Romanos","1 Coríntios","2 Coríntios","Gálatas","Efésios","Filipenses","Colossenses","1 Tessalonicenses","2 Tessalonicenses","1 Timóteo","2 Timóteo","Tito","Filemom","Hebreus","Tiago","1 Pedro","2 Pedro","1 João","2 João","3 João","Judas","Apocalipse"]):[];
+S.trails=S.v>=2?[{id:"t26",name:"2026 · Pentateuco",bs:[0,1,2,3,4],start:"2026-01-01",per:1},{id:"t27",name:"2027 · Históricos e profetas menores",bs:[5,6,7,8,9,10,11,12,13,14,15,16,27,28,29,30,31,32,33,34,35,36,37,38],start:"2027-01-01",per:1}]:[];
+S.cur=S.trails.length?(new Date().getFullYear()>=2027?"t27":"t26"):null;S.v=3;save()}
+if(!S.trails)S.trails=[];
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+let tab="trilha",dt="words",os=null,ar="Casa",openU=null,L=null,P=null,W=null;
+const today=()=>iso(new Date());
+const nextI=()=>{for(let i=0;i<TOT;i++)if(!S.done[i])return i;return TOT-1};
+const dn=()=>Object.keys(S.done).length;
+const idxOf=b=>[...Array(B[b][1])].map((_,j)=>BS[b]+j);
+const bdone=b=>idxOf(b).filter(i=>S.done[i]).length;
+const bfull=b=>bdone(b)===B[b][1];
+const readToday=()=>Object.values(S.done).filter(x=>x===today()).length;
+const notesToday=()=>["words","verses","chars","apps"].reduce((n,k)=>n+S[k].filter(x=>x.d===today()).length,0);
+const level=()=>Math.floor(S.xp/250)+1;
+function streak(){const ds=new Set(Object.values(S.done));let d=new Date(),n=0;if(!ds.has(iso(d)))d.setDate(d.getDate()-1);while(ds.has(iso(d))){n++;d.setDate(d.getDate()-1)}return n}
+function sound(big){if(S.mute)return;try{const C=new(window.AudioContext||window.webkitAudioContext)(),ns=big?[523,659,784,1047]:[659,880];ns.forEach((f,k)=>{const o=C.createOscillator(),g=C.createGain();o.type="triangle";o.frequency.value=f;o.connect(g);g.connect(C.destination);const t=C.currentTime+k*.11;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.3);o.start(t);o.stop(t+.32)})}catch(e){}}
+function sparks(x,y,n=16){const c=["#f0b84a","#c8553d","#f2a5b4","#6fae7c"];for(let i=0;i<n;i++){const e=document.createElement("i");e.className="sp";const a=Math.random()*6.28,r=30+Math.random()*120;e.style.cssText=`left:${x}px;top:${y}px;background:${c[i%4]};--dx:${Math.cos(a)*r}px;--dy:${Math.sin(a)*r-70}px;--r:${Math.random()*360}deg`;document.body.appendChild(e);setTimeout(()=>e.remove(),1400)}}
+function toast(t){const e=document.createElement("div");e.className="toast";e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2500)}
+const flame=on=>`<svg viewBox="0 0 24 24"><path d="M12 2c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 2-4 2-7 2 1 3 2 3 4 1-3 1-6 1-9z" fill="${on?"#f0833a":"#cbb9a8"}"/><path d="M12 12c1 2 3 3 3 5a3 3 0 0 1-6 0c0-2 2-3 3-5z" fill="${on?"#ffd35c":"#e5d8cb"}"/></svg>`;
+const mascot=(m="happy")=>{
+const K={happy:1,read:.9,cheer:1.45,star:1.3,worried:.45}[m],glow=(m==="cheer"||m==="star")?`<circle cx="0" cy="-18" r="30" fill="#ffd35c" opacity=".3"/>`:"";
+const E={happy:`<g class="eyes"><ellipse cx="40" cy="76" rx="5" ry="6.4" fill="#3d2433"/><ellipse cx="68" cy="76" rx="5" ry="6.4" fill="#3d2433"/><circle cx="42" cy="73.5" r="2" fill="#fff"/><circle cx="70" cy="73.5" r="2" fill="#fff"/></g>`,
+cheer:`<path d="M34 78q6-9 12 0M62 78q6-9 12 0" stroke="#3d2433" stroke-width="3.4" fill="none" stroke-linecap="round"/>`,
+worried:`<g class="eyes"><ellipse cx="40" cy="77" rx="5.6" ry="7.2" fill="#3d2433"/><ellipse cx="68" cy="77" rx="5.6" ry="7.2" fill="#3d2433"/><circle cx="42" cy="74" r="2.4" fill="#fff"/><circle cx="70" cy="74" r="2.4" fill="#fff"/><circle cx="38" cy="80" r="1.2" fill="#fff"/><circle cx="66" cy="80" r="1.2" fill="#fff"/></g><path d="M33 66l13-4M75 66l-13-4" stroke="#3d2433" stroke-width="2.6" stroke-linecap="round"/>`,
+read:`<path d="M34 76q6 6 12 0M62 76q6 6 12 0" stroke="#3d2433" stroke-width="3.2" fill="none" stroke-linecap="round"/>`,
+star:`<path d="M40 67l2.2 6 6.3 2.4-6.3 2.4-2.2 6-2.2-6-6.3-2.4 6.3-2.4zM68 67l2.2 6 6.3 2.4-6.3 2.4-2.2 6-2.2-6-6.3-2.4 6.3-2.4z" fill="#f0b84a" stroke="#c48f1d" stroke-width="1.2" stroke-linejoin="round"/>`}[m];
+const smile=`<path d="M49 87q5 5 10 0" stroke="#3d2433" stroke-width="2.6" fill="none" stroke-linecap="round"/>`,open=`<path d="M47 86q7 12 14 0z" fill="#8b2f3f"/><path d="M51 92q3-3 6 0q-3 2-6 0z" fill="#f2858f"/>`;
+const M={happy:smile,read:smile,cheer:open,star:open,worried:`<path d="M49 91q5-5 10 0" stroke="#3d2433" stroke-width="2.6" fill="none" stroke-linecap="round"/>`}[m];
+const sp=`<path d="M12 34l2 5 5 2-5 2-2 5-2-5-5-2 5-2zM92 12l1.6 4 4 1.6-4 1.6-1.6 4-1.6-4-4-1.6 4-1.6z" fill="#f0b84a"/>`;
+const X={cheer:sp,star:sp,worried:`<path d="M16 54q-5 8 0 11q5-3 0-11z" fill="#7ab8d9"/>`,read:`<rect x="24" y="97" width="64" height="19" rx="5" fill="#4f7a5a"/><rect x="27" y="100" width="29" height="13" rx="2" fill="#fff9f2"/><rect x="56" y="100" width="29" height="13" rx="2" fill="#fff9f2"/><path d="M56 100v13" stroke="#e6d5c2" stroke-width="1.5"/>`}[m]||"";
+const fc=m==="worried"?"#f4a35a":"#f0833a",fi=m==="worried"?"#ffe08a":"#ffd35c";
+return`<svg viewBox="0 0 124 118" class="mas"><ellipse cx="58" cy="110" rx="42" ry="4" fill="#0002"/><path d="M20 70Q0 66 4 84Q8 98 26 92" fill="none" stroke="#b5452f" stroke-width="7" stroke-linecap="round"/><path d="M38 99h40l4 9H34z" fill="#b5452f"/><path d="M14 76Q14 55 56 55Q86 55 98 64L110 60Q108 84 94 92Q80 102 58 102Q14 102 14 76Z" fill="#d9694e"/><path d="M20 68Q56 58 98 66" stroke="#f6c9b8" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round" fill="none"/><ellipse cx="30" cy="92" rx="9" ry="3.5" fill="#fff" opacity=".18"/><ellipse cx="30" cy="86" rx="6.5" ry="4" fill="#f2858f" opacity=".6"/><ellipse cx="78" cy="86" rx="6.5" ry="4" fill="#f2858f" opacity=".6"/>${E}${M}<rect x="106" y="52" width="6" height="9" rx="2" fill="#3d2433"/><g transform="translate(109 53) scale(${K})">${glow}<g class="fl"><path d="M0 0C-10-6-9-18 0-30C9-18 10-6 0 0Z" fill="${fc}"/><path d="M0-2C-5-5-4-12 0-18C4-12 5-5 0-2Z" fill="${fi}"/></g></g>${X}</svg>`};
+function say(){const n=S.name,s=streak(),pl=s>1?"s":"";if(readToday())return`Meta cumprida${n?", "+n:""}! Minha chama está acesa e a Palavra ilumina o seu dia. Sequência: ${s} dia${pl}.`;if(s)return`${n?n+", minha":"Minha"} chama está ficando fraquinha! Leia o capítulo de hoje e mantenha a luz acesa. Sequência de ${s} dia${pl}.`;return`Oi${n?", "+n:""}! Eu sou a Lume. Vamos acender a luz da Palavra? É só um capítulo por dia.`}
+function week(){const t=new Date(),dow=(t.getDay()+6)%7,mon=new Date(t);mon.setDate(t.getDate()-dow);const ds=new Set(Object.values(S.done));return"STQQSSD".split("").map((l,k)=>{const d=new Date(mon);d.setDate(mon.getDate()+k);return`<div class="${ds.has(iso(d))?"on":""} ${k===dow?"td":""}">${l}<br><i>${ds.has(iso(d))?"✓":""}</i></div>`}).join("")}
+const GR=[["Antigo Testamento"],["Pentateuco","#7a4a6a",[["Gênesis",50],["Êxodo",40],["Levítico",27],["Números",36],["Deuteronômio",34]]],["Históricos","#4f7a5a",[["Josué",24],["Juízes",21],["Rute",4],["1 Samuel",31],["2 Samuel",24],["1 Reis",22],["2 Reis",25],["1 Crônicas",29],["2 Crônicas",36],["Esdras",10],["Neemias",13],["Ester",10]]],["Poéticos","#c98a2a",[["Jó",42],["Salmos",150],["Provérbios",31],["Eclesiastes",12],["Cantares",8]]],["Profetas maiores","#3f7a8c",[["Isaías",66],["Jeremias",52],["Lamentações",5],["Ezequiel",48],["Daniel",12]]],["Profetas menores","#a0485f",[["Oseias",14],["Joel",3],["Amós",9],["Obadias",1],["Jonas",4],["Miqueias",7],["Naum",3],["Habacuque",3],["Sofonias",3],["Ageu",2],["Zacarias",14],["Malaquias",4]]],["Novo Testamento"],["Evangelhos e Atos","#c8553d",[["Mateus",28],["Marcos",16],["Lucas",24],["João",21],["Atos",28]]],["Cartas de Paulo","#b5653a",[["Romanos",16],["1 Coríntios",16],["2 Coríntios",13],["Gálatas",6],["Efésios",6],["Filipenses",4],["Colossenses",4],["1 Tessalonicenses",5],["2 Tessalonicenses",3],["1 Timóteo",6],["2 Timóteo",4],["Tito",3],["Filemom",1]]],["Cartas gerais e Apocalipse","#6a7a3a",[["Hebreus",13],["Tiago",5],["1 Pedro",5],["2 Pedro",3],["1 João",5],["2 João",1],["3 João",1],["Judas",1],["Apocalipse",22]]]];
+const FLAT=[];GR.forEach(g=>{if(g[1])g[2].forEach(b=>FLAT.push(b))});
+const NTI=FLAT.findIndex(b=>b[0]==="Mateus");const BC=[];GR.forEach(g=>{if(g[1])g[2].forEach(()=>BC.push(g[1]))});
+function bst(k){const[n,t]=FLAT[k];if((S.base||[]).includes(n))return{s:2,f:1,d:t,t,base:1};const d=bdone(k);return{s:d===t?2:d>0?1:0,f:d/t,d,t}}
+function pickS(k){os=os===k?null:k;render()}
+function estante(){let rd=0,otR=0,ntR=0;FLAT.forEach((_,k)=>{if(bst(k).s===2){rd++;k>=NTI?ntR++:otR++}});
+let h=`<h2 class="pg">Minha estante</h2><div class="card"><div style="display:flex;justify-content:space-between"><b>Livros lidos</b><b style="color:var(--ac)">${rd} de ${FLAT.length}</b></div><div class="pbar"><i style="width:${rd/FLAT.length*100}%"></i></div><p style="margin:8px 0 0;color:var(--mu);font-size:14px">Antigo Testamento ${otR}/${NTI} · Novo Testamento ${ntR}/${FLAT.length-NTI}</p></div><div class="lg"><span><i class="lr"></i>Lido</span><span><i class="lp"></i>Lendo</span><span><i></i>Ainda não</span></div>`;
+if(os!==null){const x=bst(os),n=FLAT[os][0];h+=`<div class="card"><b style="font:600 22px Fraunces,Georgia,serif">${n}</b><p style="margin:4px 0 0;color:var(--mu)">${x.s===2?(x.base?"Lido ✓":"Concluído na trilha ✓"):x.s===1?"Lendo agora: "+x.d+" de "+x.t+" capítulos":"Ainda não lido"+(S.trails.some(t=>t.bs.includes(os))?" · está em uma das suas trilhas":"")}</p><button class="btn gh" style="margin-top:10px" onclick="togBase(${os})">${(S.base||[]).includes(n)?"Desmarcar como lido":"Já li este livro"}</button></div>`}
+let k=0;GR.forEach(g=>{if(!g[1]){h+=`<div class="sec" style="text-align:left;margin:22px 0 -4px">${g[0]}</div>`;return}
+h+=`<div class="sec" style="text-align:left;margin:16px 0 8px;font-size:11px">${g[0]}</div><div class="row">`;
+g[2].forEach(([n,t])=>{const x=bst(k),kk=k;h+=`<div class="bk ${x.s===2?"r":x.s===1?"p":""} ${os===kk?"o":""}" style="--c:${g[1]};height:${118+Math.min(t,60)*.7}px" onclick="pickS(${kk})">${x.s===1?`<i style="height:${x.f*100}%"></i>`:""}<span style="${n.length>12?"font-size:9px":""}">${n}</span></div>`;k++});
+h+=`</div><div class="plank"></div>`});
+return h}
+function backupCard(){return`<div class="card"><b>Salvar meu progresso</b><p style="color:var(--mu);font-size:14px;margin:4px 0 12px">Seus dados ficam só neste aparelho. Gere um código e guarde nas suas notas ou no WhatsApp. Se trocar de celular, é só colar aqui.${S.lastBk?" Último backup: "+S.lastBk+".":""}</p><button class="btn g" onclick="mkCode()">Gerar código de backup</button><div id="bk"></div><div style="height:14px"></div><textarea id="rs" placeholder="Cole aqui o código para restaurar" style="min-height:70px"></textarea><button class="btn gh" onclick="rsCode()">Restaurar</button></div>`}
+function mkCode(){const c="LB27:"+btoa(unescape(encodeURIComponent(JSON.stringify(S)))),d=new Date();S.lastBk=String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0")+"/"+d.getFullYear();save();document.getElementById("bk").innerHTML=`<textarea id="cd" readonly onclick="this.select()" style="margin-top:10px;min-height:90px">${c}</textarea><button class="btn" onclick="cpCode()">Copiar código</button>`}
+function cpCode(){const t=document.getElementById("cd");t.select();const ok=()=>toast("Código copiado"),fb=()=>{try{document.execCommand("copy");ok()}catch(e){toast("Selecione o código e copie")}};try{navigator.clipboard.writeText(t.value).then(ok,fb)}catch(e){fb()}}
+function rsCode(){const v=document.getElementById("rs").value.trim();if(v.indexOf("LB27:")!==0){toast("Código inválido");return}let o;try{o=JSON.parse(decodeURIComponent(escape(atob(v.slice(5)))));if(!o.done)throw 0}catch(e){toast("Código inválido");return}if(!confirm("Isso substitui o progresso deste aparelho. Continuar?"))return;S=Object.assign({done:{},words:[],verses:[],chars:[],apps:[],cel:{},name:"",prac:{},mute:false},o);save();openU=null;render();toast("Progresso restaurado")}
+function togBase(k){const n=FLAT[k][0];S.base=S.base||[];const i=S.base.indexOf(n);i>=0?S.base.splice(i,1):S.base.push(n);save();render()}
+function priorCard(){return`<div class="card"><b>Leituras anteriores</b><p style="color:var(--mu);font-size:14px;margin:4px 0 12px">Já leu parte da trilha antes de usar o app? Escolha até onde chegou e eu marco tudo como lido, sem contar na sequência.</p><select id="pb" onchange="pbChg()">${B.map((x,i)=>`<option value="${i}">${x[0]}</option>`).join("")}</select><select id="pc">${[...Array(B[0][1])].map((_,i)=>`<option value="${i+1}">Capítulo ${i+1}</option>`).join("")}</select><button class="btn gh" onclick="markPrior()">Marcar até aqui</button></div>`}
+function pbChg(){const b=+document.getElementById("pb").value;document.getElementById("pc").innerHTML=[...Array(B[b][1])].map((_,i)=>`<option value="${i+1}">Capítulo ${i+1}</option>`).join("")}
+function markPrior(){const b=+document.getElementById("pb").value,c=+document.getElementById("pc").value;if(!confirm("Marcar tudo até "+B[b][0]+" "+c+" como já lido?"))return;let n=0;CH.forEach((x,i)=>{if((x.b<b||(x.b===b&&x.c<=c))&&!S.done[i]){S.done[i]="pre";n++}});save();openU=null;render();toast(n+" capítulos marcados")}
+const curTr=()=>S.trails.find(t=>t.id===S.cur)||S.trails[0];
+const trIdx=t=>t.bs.flatMap(b=>idxOf(b));
+const trDone=t=>trIdx(t).filter(i=>S.done[i]).length;
+const f2=n=>String(n).padStart(2,"0"),fmt=d=>f2(d.getDate())+"/"+f2(d.getMonth()+1)+"/"+d.getFullYear();
+const stDate=t=>new Date(t.start+"T00:00:00");
+function setCur(id){S.cur=id;save();render()}
+function delTrail(id){if(!confirm("Excluir esta trilha? Seu progresso de leitura continua salvo."))return;S.trails=S.trails.filter(t=>t.id!==id);S.cur=S.trails[0]?S.trails[0].id:null;save();render()}
+function trailTabs(tr){return`<div class="tt">${S.trails.map(t=>`<button class="${tr&&t.id===tr.id?"on":""}" onclick="setCur('${t.id}')"><b>${esc(t.name)}</b><small>${trDone(t)}/${trIdx(t).length}</small></button>`).join("")}<button class="nt" onclick="newTrail()"><b>+ Nova trilha</b></button></div>`}
+function planCard(t){const idx=trIdx(t),tot=idx.length,d=idx.filter(i=>S.done[i]).length,rem=tot-d,now=new Date(),st=stDate(t),per=t.per||1;let x;
+if(now<st){const fin=new Date(st);fin.setDate(fin.getDate()+Math.ceil(tot/per)-1);x=`Começa em ${fmt(st)} (faltam ${Math.ceil((st-now)/864e5)} dias) e termina em ${fmt(fin)}.`}
+else if(rem===0)x="Trilha concluída! Parabéns!";
+else{const p=Math.min(tot,(Math.floor((now-st)/864e5)+1)*per),diff=d-p,fin=new Date();fin.setDate(fin.getDate()+Math.ceil(rem/per)-(readToday()?0:1));x=(diff>=0?(diff?diff+" capítulos à frente do plano.":"Você está em dia com o plano."):(-diff)+" capítulos atrás do plano. Sem pressa.")+" Previsão de término: "+fmt(fin)+"."}
+return`<div class="plan"><div style="display:flex;justify-content:space-between"><b>${esc(t.name)}</b><b style="color:var(--ac)">${d} de ${tot}</b></div><div class="pbar"><i style="width:${tot?d/tot*100:0}%"></i></div><p>${x}</p><a href="#" onclick="delTrail('${t.id}');return false" style="font-size:12px;color:var(--mu)">Excluir trilha</a></div>`}
+function newTrail(){W={name:"",sel:[],per:1,start:iso(new Date()),open:false};drawOv()}
+function wTog(bs){const all=bs.every(b=>W.sel.includes(b));W.sel=all?W.sel.filter(b=>!bs.includes(b)):[...new Set(W.sel.concat(bs))];drawW()}
+function wRead(){const nm=document.getElementById("wn"),ds=document.getElementById("ws");if(nm)W.name=nm.value;if(ds&&ds.value)W.start=ds.value}
+function drawW(){wRead();const ov=document.getElementById("ov"),o=ov.querySelector(".ovbody"),sc=o?o.scrollTop:0,n=W.sel.length,tot=W.sel.reduce((a,b)=>a+B[b][1],0),fin=new Date(W.start+"T00:00:00");fin.setDate(fin.getDate()+Math.max(0,Math.ceil(tot/W.per)-1));
+const GRP=GR.filter(g=>g[1]).map(g=>({n:g[0],bs:g[2].map(x=>FLAT.indexOf(x))}));
+ov.innerHTML=`<div class="ov"><div class="ovtop"><button onclick="closeOv()">×</button><div style="font:600 22px Fraunces,Georgia,serif">Nova trilha</div></div><div class="ovbody"><p class="sub">Dê um nome, escolha o que vai estudar e o ritmo. O app monta o caminho para você.</p><input id="wn" placeholder="Nome da trilha (ex.: Evangelhos)" value="${esc(W.name)}"><p class="sub" style="margin:6px 0 8px;font-weight:700">O que você quer estudar?</p><div class="areas">${GRP.map(g=>`<button class="${g.bs.every(b=>W.sel.includes(b))?"on":""}" onclick="wTog(${JSON.stringify(g.bs)})">${g.n}</button>`).join("")}</div><button class="btn gh" style="margin-bottom:12px" onclick="wRead();W.open=!W.open;drawW()">${W.open?"Esconder livros":"Escolher livros um a um"}</button>${W.open?`<div class="areas">${B.map((x,b)=>`<button class="${W.sel.includes(b)?"on":""}" onclick="wTog([${b}])">${(S.base||[]).includes(x[0])?"✓ ":""}${x[0]}</button>`).join("")}</div>`:""}<p class="sub" style="margin:10px 0 8px;font-weight:700">Quantos capítulos por dia?</p><div class="areas">${[1,2,3].map(p=>`<button class="${W.per===p?"on":""}" onclick="wRead();W.per=${p};drawW()">${p} por dia</button>`).join("")}</div><p class="sub" style="margin:10px 0 8px;font-weight:700">Quando começa?</p><input id="ws" type="date" value="${W.start}" onchange="drawW()"><div class="plan"><b>${n?n+" livro"+(n>1?"s":"")+" · "+tot+" capítulos":"Escolha pelo menos um livro"}</b>${n?`<p>Terminando em ${fmt(fin)}, lendo ${W.per} por dia.</p>`:""}</div></div><div class="ovft"><button class="btn g" onclick="mkTrail()">Criar trilha</button></div></div>`;
+const o2=ov.querySelector(".ovbody");if(o2)o2.scrollTop=sc}
+function mkTrail(){wRead();if(!W.sel.length){toast("Escolha pelo menos um livro");return}const t={id:"t"+Date.now(),name:(W.name||"").trim()||"Minha trilha",bs:[...W.sel].sort((a,b)=>a-b),start:W.start||iso(new Date()),per:W.per};S.trails.push(t);S.cur=t.id;W=null;save();document.getElementById("ov").innerHTML="";openU=null;render();toast("Trilha criada!")}
+function setName(){const n=prompt("Como posso te chamar?",S.name||"");if(n!==null){S.name=n.trim();save();render()}}
+function saveName(){const v=document.getElementById("nm").value.trim();if(v){S.name=v;save();render()}}
+function T(t){tab=t;render();scrollTo(0,0)}
+function tgl(b){openU[b]=!openU[b];render()}
+function mute(){S.mute=!S.mute;save();render()}
+function del(k,i){if(confirm("Apagar este item?")){S[k].splice(i,1);save();render()}}
+
+/* ---------- Lição ---------- */
+function startLesson(i){L={i,s:0,xp:0,saved:0,fx:false,was:!!S.done[i]};drawOv()}
+function gain(n){L.xp+=n;S.xp+=n}
+function lnext(skip){const i=L.i,ref=CH[i].ref,g=id=>{const e=document.getElementById(id);return e?e.value.trim():""},d=today();
+if(L.s===0){if(!S.done[i]){S.done[i]=d;gain(20);sound()}}
+else if(!skip){
+if(L.s===1&&g("a1")){S.words.unshift({t:g("a1"),m:g("a2"),ref,d});gain(5);L.saved++}
+if(L.s===2&&g("b1")){S.verses.unshift({t:g("b1"),m:g("b2"),ref,d});gain(5);L.saved++}
+if(L.s===3&&g("c1")){S.chars.unshift({t:g("c1"),m:g("c2"),ref,d});gain(5);L.saved++}
+if(L.s===4&&g("e1")){S.apps.unshift({t:g("e1"),m:"",ref,area:ar,d});gain(5);L.saved++}}
+L.s++;
+if(L.s===5){const b=CH[i].b;const tr=curTr();if(tr&&trDone(tr)===trIdx(tr).length&&!S.cel["t"+tr.id]){S.cel["t"+tr.id]=1;L.fin="Trilha concluída!"}else if(bfull(b)&&!S.cel[b]){S.cel[b]=1;L.fin=B[b][0]+" concluído!"}
+if(!L.was){gain(10)}sound(true)}
+save();drawOv()}
+function undoRead(){delete S.done[L.i];save();L=null;document.getElementById("ov").innerHTML="";render()}
+function closeOv(){L=null;P=null;W=null;document.getElementById("ov").innerHTML="";render()}
+const STEPS=[
+ ["Hora de ler","Leia com calma. Quando terminar, volte aqui."],
+ ["Alguma palavra nova?","Anote uma palavra que você não conhecia."],
+ ["Algum versículo marcou?","Guarde aquele que tocou seu coração."],
+ ["Quem apareceu?","Registre um personagem deste capítulo."],
+ ["Como aplicar na sua vida?","Uma coisa pequena para colocar em prática."]];
+function drawOv(){const ov=document.getElementById("ov");if(W){drawW();return}
+if(L){const c=CH[L.i],s=L.s;let h=`<div class="ov"><div class="ovtop"><button onclick="closeOv()">×</button><div class="pb"><i style="width:${s/5*100}%"></i></div></div>`;
+if(s<5){h+=`<div class="ovbody">${mascot(s===0?"read":"happy")}<h2>${STEPS[s][0]}</h2><p class="sub">${STEPS[s][1]}</p>`;
+if(s===0)h+=`<div class="ref">${esc(c.ref)}</div>${L.was?`<p class="sub">Você já leu este capítulo. <a href="#" onclick="undoRead();return false" style="color:var(--ac)">Desmarcar leitura</a></p>`:""}`;
+if(s===1)h+=`<input id="a1" placeholder="Palavra"><input id="a2" placeholder="O que significa?">`;
+if(s===2)h+=`<textarea id="b1" placeholder="Escreva o versículo"></textarea><input id="b2" placeholder="Por que ele marcou você?">`;
+if(s===3)h+=`<input id="c1" placeholder="Nome do personagem"><input id="c2" placeholder="Quem é e o que fez?">`;
+if(s===4)h+=`<div class="areas">${["Casa","Filhos","Trabalho","Liderança","Eu"].map(a=>`<button class="${ar===a?"on":""}" onclick="ar='${a}';this.parentNode.querySelectorAll('button').forEach(b=>b.classList.remove('on'));this.classList.add('on')">${a}</button>`).join("")}</div><textarea id="e1" placeholder="O que esse capítulo me ensina?"></textarea>`;
+h+=`</div><div class="ovft"><button class="btn ${s===0?"":"g"}" onclick="lnext()">${s===0?(L.was?"Continuar":"Já li!"):"Continuar"}</button>${s>0?`<button class="btn gh" onclick="lnext(1)">Pular</button>`:""}</div></div>`}
+else{const st=streak();h+=`<div class="ovbody fin">${mascot(L.fin?"star":"cheer")}<h2>${L.fin||"Lição concluída!"}</h2><p class="sub">${L.fin?"Mais uma conquista para a sua trilha.":"Mais um dia de leitura. Que orgulho!"}</p><div class="stats"><div><b>+${L.xp}</b><small>XP</small></div><div><b>${st}</b><small>dias seguidos</small></div><div><b>${L.saved}</b><small>anotações</small></div></div></div><div class="ovft"><button class="btn g" onclick="closeOv()">Continuar</button></div></div>`;
+setTimeout(()=>{if(!L.fx){L.fx=1;sparks(innerWidth/2,innerHeight/3,40)}},50)}
+ov.innerHTML=h;return}
+if(P){let h=`<div class="ov"><div class="ovtop"><button onclick="closeOv()">×</button><div class="pb"><i style="width:${P.i/P.c.length*100}%"></i></div></div>`;
+if(P.i<P.c.length){const {k,x}=P.c[P.i],q=k==="verses"?"Qual versículo você guardou em "+esc(x.ref)+"?":k==="apps"?"O que você quis aplicar em "+esc(x.ref)+" ("+esc(x.area||"")+")?":esc(x.t),a=k==="words"||k==="chars"?x.m:k==="verses"?"“"+x.t+"”"+(x.m?" — "+x.m:""):x.t;
+h+=`<div class="ovbody"><h2>Você lembra?</h2><p class="sub">${{words:"Palavra",verses:"Versículo",chars:"Personagem",apps:"Aplicação"}[k]} de ${esc(x.ref)}</p><div class="flash"><div class="t">${q}</div>${P.show?`<div class="a">${esc(a||"(sem anotação)")}</div>`:""}</div></div><div class="ovft">${P.show?`<button class="btn g" onclick="pans(1)">Lembrei</button><button class="btn gh" onclick="pans(0)">Preciso rever</button>`:`<button class="btn" onclick="P.show=1;drawOv()">Mostrar resposta</button>`}</div></div>`}
+else h+=`<div class="ovbody fin">${mascot(P.ok>=3?"cheer":"happy")}<h2>Prática concluída!</h2><p class="sub">Revisar é o que faz o conteúdo ficar.</p><div class="stats"><div><b>+${P.xp}</b><small>XP</small></div><div><b>${P.ok}/${P.c.length}</b><small>lembrei</small></div></div></div><div class="ovft"><button class="btn g" onclick="closeOv()">Continuar</button></div></div>`;
+ov.innerHTML=h;return}
+ov.innerHTML=""}
+/* ---------- Prática ---------- */
+function startP(){const a=[];["words","verses","chars","apps"].forEach(k=>S[k].forEach(x=>a.push({k,x})));if(!a.length){toast("Anote algo em uma lição primeiro");return}
+a.sort(()=>Math.random()-.5);P={c:a.slice(0,5),i:0,show:0,ok:0,xp:0,fx:0};drawOv()}
+function pans(ok){if(ok){P.ok++;P.xp+=5;S.xp+=5;sound()}P.i++;P.show=0;if(P.i===P.c.length){P.xp+=10;S.xp+=10;S.prac[today()]=(S.prac[today()]||0)+P.c.length;save();sound(true);setTimeout(()=>sparks(innerWidth/2,innerHeight/3,36),50)}drawOv()}
+/* ---------- Telas ---------- */
+function marks(){const s=streak(),d=dn(),f=(a,z)=>{for(let b=a;b<=z;b++)if(!bfull(b))return false;return true};
+return[["✦","Primeiro passo","Seu primeiro capítulo no app",Object.values(S.done).some(v=>v!=="pre")],["◆","Semana de constância","7 dias seguidos",s>=7],["▲","Rotina de ferro","30 dias seguidos, como no treino",s>=30],["✎","Dez palavras novas","Vocabulário crescendo",S.words.length>=10],["❝","Dez versículos guardados","Seu caderno de versículos",S.verses.length>=10],["♡","Dez personagens","Cada um com sua história",S.chars.length>=10],["⚑","Líder da própria vida","10 aplicações anotadas",S.apps.length>=10],["◐","Cem capítulos","100 capítulos lidos no app",Object.values(S.done).filter(v=>v!=="pre").length>=100],["✝","Pentateuco concluído","De Gênesis a Deuteronômio",f(0,4)],["❖","Históricos concluídos","De Josué a Ester",f(5,16)],["✧","Profetas menores concluídos","De Oseias a Malaquias",f(27,38)],["★","Trilha concluída","Complete uma trilha inteira",S.trails.some(t=>trIdx(t).length>0&&trDone(t)===trIdx(t).length)]]}
+const OFF=[0,34,52,34,0,-34,-52,-34];
+const IC={est:'<rect x="3" y="4" width="4" height="16" rx="1"/><rect x="9" y="7" width="4" height="13" rx="1"/><path d="M15 20l3.5-13 3 .8L18 21z"/>',trilha:'<path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',prac:'<path d="M4 12a8 8 0 0 1 14-5l2-2v6h-6l2.2-2.2A5 5 0 1 0 17 12"/>',metas:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',dia:'<path d="M6 3h11a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2zM6 19a2 2 0 0 1 2-2h11"/>'};
+function render(){
+if(openU===null)openU={};
+const rt=readToday()>0;let h=`<div class="top"><div class="st">${flame(rt)}<span style="color:${rt?"#e0742c":"var(--mu)"}">${streak()}</span></div><span class="xp">⭐ ${S.xp} XP</span><span class="lv">Nv ${level()}</span><button onclick="mute()">${S.mute?"🔇":"🔊"}</button></div>`;
+if(tab==="trilha"){
+h+=`<div class="week">${week()}</div><div class="say">${mascot(readToday()?"star":streak()?"worried":"happy")}<p onclick="setName()">${say()}</p></div>`;
+if(!S.name)h+=`<div class="name"><div style="font-weight:700;margin-bottom:8px">Como posso te chamar?</div><input id="nm" placeholder="Seu nome"><button class="btn g" onclick="saveName()">Salvar</button></div>`;
+const tr=curTr();if(tr)S.cur=tr.id;
+h+=trailTabs(tr);
+if(!tr)h+=`<div class="card" style="text-align:center;margin-top:10px"><h2 class="pg" style="font-size:24px">Monte a sua trilha</h2><p style="color:var(--mu);margin:0 0 14px">Escolha o que quer estudar (um livro, um grupo ou vários) e o ritmo de leitura. O app cria o caminho para você.</p><button class="btn" onclick="newTrail()">Criar minha primeira trilha</button></div>`;
+else{
+h+=planCard(tr);
+const ia=trIdx(tr),lockd=new Date()<stDate(tr),k="i"+tr.id,c0=ia.find(i=>!S.done[i]);
+if(!openU[k]){openU[k]=1;if(c0!==undefined)openU[CH[c0].b]=true}
+const cur=lockd||c0===undefined?-1:c0;
+tr.bs.forEach((b,pos)=>{const n=B[b][0],t=B[b][1],dd=bdone(b),full=dd===t;
+h+=`<div class="unit" style="background:${BC[b]}" onclick="tgl(${b})"><div><small>LIVRO ${pos+1} DE ${tr.bs.length}</small><b>${n}</b><small>${dd} de ${t} capítulos</small></div><span>${full?"✓":openU[b]?"▾":"▸"}</span></div>`;
+if(openU[b])idxOf(b).forEach((i,j)=>{const d=!!S.done[i],c=i===cur&&!d;h+=`<div class="nw" style="transform:translateX(${OFF[j%8]}px)">${c?`<div class="go">COMEÇAR</div>`:""}<button class="node ${d?"d":c?"c":lockd?"lk":""}" onclick="${lockd&&!d?"toast('Esta trilha começa em "+fmt(stDate(tr))+"')":"startLesson("+i+")"}">${d?"✓":CH[i].c}</button></div>`})})
+}
+}
+else if(tab==="est")h+=estante();
+else if(tab==="prac"){
+const n=S.words.length+S.verses.length+S.chars.length+S.apps.length;
+h+=`<h2 class="pg">Praticar</h2><div class="card" style="text-align:center">${mascot()}<p style="margin:8px 0 14px">${n?"Revise 5 anotações sorteadas e ganhe XP. Revisar é o que faz tudo ficar na memória.":"Quando você anotar algo nas lições, poderá praticar aqui."}</p><button class="btn g" onclick="startP()">Começar prática</button></div><div class="stats" style="margin-top:0"><div><b>${S.words.length}</b><small>palavras</small></div><div><b>${S.verses.length}</b><small>versículos</small></div><div><b>${S.chars.length}</b><small>pessoas</small></div><div><b>${S.apps.length}</b><small>aplicar</small></div></div>`;
+}
+else if(tab==="metas"){
+const q=[["📖","Ler 1 capítulo",readToday(),1],["✎","Fazer 2 anotações",notesToday(),2],["🔁","Praticar 5 cartões",S.prac[today()]||0,5]],m=marks();
+h+=`<h2 class="pg">Metas do dia</h2><div class="card">${q.map(x=>{const p=Math.min(1,x[2]/x[3]);return`<div class="q ${p>=1?"ok":""}"><i>${p>=1?"✓":x[0]}</i><div><b>${x[1]}</b><div class="pbar"><i style="width:${p*100}%"></i></div></div><small style="font-weight:800;color:var(--mu)">${Math.min(x[2],x[3])}/${x[3]}</small></div>`}).join("")}</div>${backupCard()}${priorCard()}<h2 class="pg" style="margin-top:22px">Conquistas</h2>${m.map(x=>`<div class="mk ${x[3]?"on":""}"><i>${x[0]}</i><div><b>${x[1]}</b><small>${x[2]}</small></div></div>`).join("")}`;
+}
+else{
+const KN={words:"Palavras",verses:"Versículos",chars:"Pessoas",apps:"Aplicar"};
+h+=`<h2 class="pg">Meu diário</h2><div class="tabs">${Object.keys(KN).map(k=>`<button class="${dt===k?"on":""}" onclick="dt='${k}';render()">${KN[k]} ${S[k].length}</button>`).join("")}</div>`;
+const a=S[dt];h+=a.length?a.map((x,i)=>`<div class="item ${dt}"><div>${dt==="apps"?`<span class="tag">${esc(x.area||"")}</span><div>${esc(x.t)}</div>`:dt==="verses"?`<q>${esc(x.t)}</q>`:`<b>${esc(x.t)}</b>`}${dt!=="apps"&&x.m?`<div>${esc(x.m)}</div>`:""}<small>${esc(x.ref)}</small></div><button class="x" onclick="del('${dt}',${i})">×</button></div>`).join(""):`<p class="empty">Ainda vazio. Faça uma lição e suas anotações aparecem aqui.</p>`;
+}
+document.getElementById("app").innerHTML=h;
+document.getElementById("nav").innerHTML=[["trilha","Trilha"],["est","Estante"],["prac","Praticar"],["metas","Metas"],["dia","Diário"]].map(t=>`<button class="${tab===t[0]?"on":""}" onclick="T('${t[0]}')"><svg viewBox="0 0 24 24">${IC[t[0]]}</svg>${t[1]}</button>`).join("");
+}
+render();
+if("serviceWorker" in navigator&&location.protocol.indexOf("http")===0)navigator.serviceWorker.register("sw.js").catch(function(){});
+</script>
+</body>
+</html>
